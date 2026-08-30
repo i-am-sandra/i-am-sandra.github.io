@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo-ico.png">
   <title>Hem Works • Concierge Hemming Service</title>
   
   <!-- Tailwind CSS CDN -->
@@ -235,7 +236,7 @@
         <img 
           src="Gemini_Generated_Image_q5dhwrq5dhwrq5dh.jpg" 
           alt="Hands guiding lavender fabric under sewing machine" 
-          onerror="this.onerror=null; this.src='/hero.png';"
+          onerror="this.onerror=null; this.src='/hero.webp';"
         />
       </div>
       
@@ -375,7 +376,7 @@
             <div class="flex-1 h-[1.5px] bg-[#e9d5ff]"></div>
           </div>
           <p class="text-[#230d4e] text-base font-bold">
-            We specialize <span class="font-black underline decoration-[#c084fc] decoration-2">only</span> in the following items.
+            We specialize in hemming <span class="font-black underline decoration-[#c084fc] decoration-2">only</span> the following items.
           </p>
         </div>
 
@@ -388,7 +389,7 @@
               <canvas id="crop-pants" class="service-img-canvas" width="400" height="320"></canvas>
             </div>
             <div class="py-4 bg-white border-t border-purple-50">
-              <h3 class="text-2xl font-black text-[#230d4e]">Pants</h3>
+              <h3 class="text-2xl font-black text-[#230d4e]">Pants/Jeans</h3>
             </div>
           </div>
 
@@ -418,7 +419,7 @@
               <canvas id="crop-tshirts" class="service-img-canvas" width="400" height="320"></canvas>
             </div>
             <div class="py-4 bg-white border-t border-purple-50">
-              <h3 class="text-2xl font-black text-[#230d4e]">Women Shirts</h3>
+              <h3 class="text-2xl font-black text-[#230d4e]">Shirts</h3>
             </div>
           </div>
 
@@ -428,7 +429,7 @@
               <canvas id="crop-dresses" class="service-img-canvas" width="400" height="320"></canvas>
             </div>
             <div class="py-4 bg-white border-t border-purple-50">
-              <h3 class="text-2xl font-black text-[#230d4e]">Dresses</h3>
+              <h3 class="text-2xl font-black text-[#230d4e]">Dresses (Not Wedding)</h3>
             </div>
           </div>
 
@@ -551,12 +552,12 @@
       // Fallback in case mockup.png is unavailable
       mockupImg.onerror = function() {
         const fallbacks = {
-          'crop-pants': '/pants.png',
-          'crop-shorts': '/shorts.png',
-          'crop-skirts': '/skirt.png',
-          'crop-tshirts': '/shirt.png',
-          'crop-dresses': '/dress.png',
-          'crop-curtains':'/curtains.png'
+          'crop-pants': '/pants.webp',
+          'crop-shorts': '/shorts.webp',
+          'crop-skirts': '/skirt.webp',
+          'crop-tshirts': '/shirt.webp',
+          'crop-dresses': '/dress.webp',
+          'crop-curtains':'/curtains.webp'
         };
 
         for (const [id, url] of Object.entries(fallbacks)) {
