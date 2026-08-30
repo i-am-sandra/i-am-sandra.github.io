@@ -89,36 +89,15 @@
       display: block;
     }
 
-    /* Gradient overlay that washes out the photo on the left */
-    .hero-gradient-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #fbf0fd 28%,
-        rgba(251, 240, 253, 0.94) 42%,
-        rgba(248, 225, 253, 0.60) 60%,
-        rgba(245, 208, 254, 0.12) 85%,
-        transparent 100%
-      );
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    /* Responsive hero background for mobile */
+    /* Responsive hero background for mobile: full-width photo, text centered over it */
     @media (max-width: 768px) {
+      .hero-banner-wrapper {
+        display: flex;
+        align-items: center;
+        min-height: 520px;
+      }
       .hero-bg-photo {
         width: 100%;
-        opacity: 0.35;
-      }
-      .hero-gradient-overlay {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.95) 0%,
-          rgba(251, 240, 253, 0.88) 60%,
-          rgba(245, 208, 254, 0.5) 100%
-        );
       }
     }
 
@@ -240,12 +219,9 @@
         />
       </div>
       
-      <!-- Seamless Gradient Wash Overlay -->
-      <div class="hero-gradient-overlay"></div>
-
-      <!-- Hero Foreground Content on the Left -->
-      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-xl">
+      <!-- Hero Foreground Content on the Left (centered on mobile) -->
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="max-w-xl mx-auto text-center md:mx-0 md:text-left">
           
           <!-- Big Rounded Headline -->
           <h1 class="text-4xl sm:text-5xl lg:text-[3.65rem] font-black text-[#230d4e] tracking-tight leading-[1.08] mb-3">
@@ -260,14 +236,14 @@
           </p>
 
           <!-- Heart Divider (Line - Heart - Line) -->
-          <div class="flex items-center gap-2 mb-7 max-w-[170px]">
+          <div class="flex items-center gap-2 mb-7 max-w-[170px] mx-auto md:mx-0">
             <div class="flex-1 h-[2px] bg-[#d8b4fe]"></div>
             <i class="fa-solid fa-heart text-[#851ee8] text-xs"></i>
             <div class="flex-1 h-[2px] bg-[#d8b4fe]"></div>
           </div>
 
           <!-- Rounded CTA Button with Arrow -->
-          <div>
+          <div class="flex justify-center md:justify-start">
             <a href="#contact" class="inline-flex items-center gap-3.5 bg-[#851ee8] hover:bg-[#7316cd] active:scale-95 text-white px-8 py-3.5 rounded-full font-black text-base shadow-xl shadow-purple-400/30 transition-all duration-200">
               <span>Get Started</span>
               <i class="fa-solid fa-arrow-right text-sm"></i>
