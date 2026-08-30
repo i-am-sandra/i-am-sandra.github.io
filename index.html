@@ -89,6 +89,30 @@
       display: block;
     }
 
+    /* Gradient overlay that washes out the photo on the left (desktop/tablet only) */
+    .hero-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #fbf0fd 28%,
+        rgba(251, 240, 253, 0.94) 42%,
+        rgba(248, 225, 253, 0.60) 60%,
+        rgba(245, 208, 254, 0.12) 85%,
+        transparent 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+      display: none;
+    }
+
+    @media (min-width: 769px) {
+      .hero-gradient-overlay {
+        display: block;
+      }
+    }
+
     /* Responsive hero background for mobile: full-width photo, text centered over it */
     @media (max-width: 768px) {
       .hero-banner-wrapper {
@@ -219,9 +243,12 @@
         />
       </div>
       
+      <!-- Seamless Gradient Wash Overlay (desktop/tablet only) -->
+      <div class="hero-gradient-overlay"></div>
+
       <!-- Hero Foreground Content on the Left (centered on mobile) -->
       <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="max-w-xl mx-auto text-center md:mx-0 md:text-left">
+        <div class="max-w-xl mx-auto text-center md:mx-0 md:text-left bg-white/50 md:bg-transparent rounded-2xl p-6 md:p-0">
           
           <!-- Big Rounded Headline -->
           <h1 class="text-4xl sm:text-5xl lg:text-[3.65rem] font-black text-[#230d4e] tracking-tight leading-[1.08] mb-3">
@@ -564,7 +591,7 @@
         });
 
         // Add Positron map tiles
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2lay_1_659121659ebc838ab7c33cc6', {
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
           subdomains: 'abcd',
           maxZoom: 19
