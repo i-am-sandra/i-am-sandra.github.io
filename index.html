@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
+  <!-- TopoJSON client + US Atlas county boundaries, used to outline Santa Fe County -->
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -176,6 +179,24 @@
       font-size: 9px !important;
       opacity: 0.65;
     }
+
+    /* About Sandra Section */
+    .about-photo-frame {
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 8px solid #e9d5ff;
+      box-shadow: 0 10px 30px -8px rgba(133, 30, 232, 0.35);
+    }
+    .about-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .signature-text {
+      font-family: 'Brush Script MT', cursive;
+      font-style: italic;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-purple-200 selection:text-purple-900 font-sans">
@@ -275,6 +296,46 @@
               <span>Get Started</span>
               <i class="fa-solid fa-arrow-right text-sm"></i>
             </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Sandra Section -->
+    <section id="about" class="py-16 sm:py-20 bg-[#fdf2ff] border-y border-purple-100">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-center">
+
+          <!-- Left: Intro Text -->
+          <div class="md:col-span-7 text-center md:text-left">
+            <h2 class="text-5xl sm:text-6xl font-black text-[#230d4e] tracking-tight mb-3">
+              Hi!
+            </h2>
+            <div class="flex items-center gap-2 mb-6 max-w-[170px] mx-auto md:mx-0">
+              <div class="flex-1 h-[2px] bg-[#d8b4fe]"></div>
+              <i class="fa-solid fa-heart text-[#851ee8] text-xs"></i>
+              <div class="flex-1 h-[2px] bg-[#d8b4fe]"></div>
+            </div>
+
+            <p class="text-lg sm:text-xl font-bold text-[#230d4e] leading-relaxed mb-5">
+              I'm Sandra, and I am happy to help you with your garment hemming needs. I offer a personalized service in the comfort of your home. I love helping people feel great in the clothes they already own.
+            </p>
+
+            <p class="text-base sm:text-lg font-semibold text-[#3b0764]/80 leading-relaxed mb-7">
+              When I'm not at the sewing machine, I am exploring the trails around Santa Fe, going to the movies, or walking around the plaza while sipping on some chai.
+            </p>
+
+            <p class="signature-text text-4xl text-[#851ee8]">
+              Sandra <i class="fa-solid fa-heart text-2xl align-middle"></i>
+            </p>
+          </div>
+
+          <!-- Right: Circular Photo -->
+          <div class="md:col-span-5 flex justify-center">
+            <div class="about-photo-frame w-64 h-64 sm:w-80 sm:h-80">
+              <img src="ME-hand-on-hip.webp" alt="Sandra, founder of Hem Works">
+            </div>
           </div>
 
         </div>
@@ -597,15 +658,30 @@
           maxZoom: 19
         }).addTo(map);
 
-        // Purple Service Radius Circle surrounding Santa Fe
-        L.circle(santaFeCoords, {
-          color: '#9333ea',
-          fillColor: '#a855f7',
-          fillOpacity: 0.24,
-          weight: 2,
-          dashArray: '6, 6',
-          radius: 12000
-        }).addTo(map);
+        // Outline the actual Santa Fe County boundary in purple
+        // (US Census TIGER county shapes, via the us-atlas TopoJSON + topojson-client)
+        fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json')
+          .then(res => res.json())
+          .then(topology => {
+            const countiesGeo = topojson.feature(topology, topology.objects.counties);
+            const santaFeCountyFeature = countiesGeo.features.find(f => f.id === '35049');
+
+            if (santaFeCountyFeature) {
+              const countyLayer = L.geoJSON(santaFeCountyFeature, {
+                style: {
+                  color: '#851ee8',
+                  weight: 3,
+                  fillColor: '#a855f7',
+                  fillOpacity: 0.10,
+                  dashArray: '6, 4'
+                }
+              }).addTo(map);
+
+              // Frame the map around the county outline itself
+              map.fitBounds(countyLayer.getBounds(), { padding: [16, 16] });
+            }
+          })
+          .catch(err => console.warn('Santa Fe County boundary load:', err));
 
         // Central scissor pin marker
         const markerHtml = `
