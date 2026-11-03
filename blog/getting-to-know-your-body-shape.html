@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../logo-ico.png">
+  <title>Getting to know and dress your body shape • Hem Works Blog</title>
+  <meta name="description" content="How to find your body shape and choose styles that create harmony and proportion, with a focus on the reverse triangle shape.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Quicksand:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Quicksand', 'Nunito', 'sans-serif'],
+            rounded: ['Quicksand', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      color: #230d4e;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    .brand-logo-frame {
+      width: 46px; height: 46px; border-radius: 12px; overflow: hidden;
+      display: flex; align-items: flex-start; justify-content: center;
+      background-color: transparent; flex-shrink: 0;
+    }
+    .brand-logo-frame img {
+      width: 100%; height: auto; object-fit: cover; object-position: top center;
+      transform: translateY(-0.5%);
+    }
+    /* Blog images: soft lilac frame so a missing image still looks tidy */
+    .post-figure img {
+      display: block; width: 100%; height: auto; background-color: #faf5ff;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-purple-200 selection:text-purple-900 font-sans">
+
+  <!-- Navigation Bar (same as home page; links point back up one folder) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-purple-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+      <a href="../index.html" class="flex items-center gap-3">
+        <div class="brand-logo-frame">
+          <img src="../H_W_LOGO.png" alt="Hem Works Logo" onerror="this.onerror=null; this.src='/small logo.png';">
+        </div>
+        <div class="flex items-center text-2xl sm:text-[1.75rem] font-black tracking-tight select-none">
+          <span class="text-[#230d4e]">Hem</span>
+          <span class="text-[#851ee8] mx-1.5 text-base"><i class="fa-solid fa-heart"></i></span>
+          <span class="text-[#851ee8]">Works</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-9 text-base font-bold text-[#230d4e]">
+        <a href="../index.html#how-it-works" class="hover:text-[#851ee8] transition-colors">How It Works</a>
+        <a href="../index.html#services" class="hover:text-[#851ee8] transition-colors">Services</a>
+        <a href="index.html" class="text-[#851ee8]" aria-current="page">Blog</a>
+        <a href="../index.html#contact" class="hover:text-[#851ee8] transition-colors">Contact</a>
+      </nav>
+
+      <div class="hidden sm:block">
+        <a href="../index.html#contact" class="bg-[#851ee8] hover:bg-[#7316cd] active:scale-95 text-white px-7 py-2.5 rounded-full font-extrabold text-sm shadow-md hover:shadow-purple-300 transition duration-200 inline-block">
+          Get Started
+        </a>
+      </div>
+
+      <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation" class="md:hidden text-[#230d4e] p-2 focus:outline-none">
+        <i id="mobileMenuIcon" class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-purple-100 px-6 py-5 space-y-4 shadow-lg">
+      <a href="../index.html#how-it-works" class="block font-bold text-lg text-[#230d4e] hover:text-[#851ee8]">How It Works</a>
+      <a href="../index.html#services" class="block font-bold text-lg text-[#230d4e] hover:text-[#851ee8]">Services</a>
+      <a href="index.html" class="block font-bold text-lg text-[#851ee8]">Blog</a>
+      <a href="../index.html#contact" class="block font-bold text-lg text-[#230d4e] hover:text-[#851ee8]">Contact</a>
+      <a href="../index.html#contact" class="block text-center bg-[#851ee8] text-white py-3 rounded-full font-extrabold text-base shadow-md">
+        Get Started
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- Post title band -->
+    <section class="bg-[#fdf2ff] border-b border-purple-100 py-12 sm:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+        <p class="text-sm font-extrabold uppercase tracking-widest text-[#5a1e96] mb-3">The Hem Works Blog</p>
+        <!-- ✏️ POST TITLE -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#230d4e] tracking-tight leading-[1.1] mb-4 max-w-3xl">
+          Getting to know and dress your body shape
+        </h1>
+        <div class="flex items-center gap-2 max-w-[170px] mx-auto md:mx-0">
+          <div class="flex-1 h-[2px] bg-[#d8b4fe]"></div>
+          <i class="fa-solid fa-heart text-[#851ee8] text-xs"></i>
+          <div class="flex-1 h-[2px] bg-[#d8b4fe]"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two columns: post (left) + list of posts (right) -->
+    <section class="py-12 sm:py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+
+        <!-- ============ LEFT: POST CONTENT ============ -->
+        <article class="lg:col-span-8 space-y-6 text-base sm:text-lg font-semibold text-[#3b0764]/80 leading-relaxed">
+
+          <figure class="post-figure rounded-3xl overflow-hidden border border-purple-100 shadow-sm">
+            <img src="img/sketch-body-shapes.webp" alt="Sketch of the five body shapes: hourglass, rectangle, apple, pear and reverse triangle" loading="lazy">
+          </figure>
+
+          <p>
+            When you become familiar with the shape of your body, the next step will be learning about styles that flatter those proportions, and by flatter I mean that we dress in a way that creates symmetry, or a certain degree of harmony that psychologically makes others see you as attractive.
+          </p>
+
+          <p>
+            An easy way to see the shape of your body is taking a photo of yourself wearing your underwear only with your phone placed on a surface at torso level and setting a 5 to 10 second timer while you stand in front of the phone against the wall looking straight. You can notice whether your shape is hour glass, rectangle, apple, pear, or reverse triangle.
+          </p>
+
+          <figure class="post-figure rounded-3xl overflow-hidden border border-purple-100 shadow-sm max-w-md mx-auto">
+            <img src="img/silhouette.jpeg" alt="Body silhouette photo showing a reverse triangle shape" loading="lazy">
+          </figure>
+
+          <p>
+            Now, because I have a reverse triangle body shape that's what I'm going to focus on. The objective is not to hide broad shoulders. It is to understand visual proportions and make more intentional clothing choices. It was just 4 weeks ago that I noticed by looking at a photo that someone took over a crowd where I was standing to the front of the crowd, that I realized skinny jeans combined with tight fitting tops are definitely not a good combination for me.
+          </p>
+
+          <figure class="post-figure rounded-3xl overflow-hidden border border-purple-100 shadow-sm">
+            <img src="img/full%20size%20silhouette.jpg" alt="Full size silhouette showing broad shoulders and narrower hips" loading="lazy">
+          </figure>
+
+          <p>
+            Sometimes, the problem isn't the clothes, but the way its design interacts with your natural proportions. An off-the-shoulder dress isn't inherently bad. It simply emphasizes a particular horizontal line. Below are some starts and stops to keep in mind when you are shopping for clothes, or better yet, when you are ready to start making your own clothes, or having them made by someone else to your precise measurements.
+          </p>
+
+          <p>
+            Again, these are focused on reverse triangle body shape. The focus of your outfit should be on keeping the shoulder area relatively clean and to introduce visual interest, movement and volume toward the waist, hips and lower body. Fit and fabric also matter.
+          </p>
+
+          <!-- STOP WEARING -->
+          <div class="bg-[#fdf2ff] border border-purple-100 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-black text-[#230d4e] tracking-tight mb-2">Stop wearing</h2>
+            <div class="flex items-center gap-2 mb-5 max-w-[120px]">
+              <div class="flex-1 h-[1.5px] bg-[#e9d5ff]"></div>
+              <i class="fa-solid fa-heart text-[#851ee8] text-xs"></i>
+              <div class="flex-1 h-[1.5px] bg-[#e9d5ff]"></div>
+            </div>
+            <ul class="space-y-3 text-[#230d4e] font-bold">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-[#d946ef] mt-1.5 shrink-0"></i><span>Anything with exaggerated shoulders, or gathers at the shoulders.</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-[#d946ef] mt-1.5 shrink-0"></i><span>Ruffles at the shoulders or sleeves</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-[#d946ef] mt-1.5 shrink-0"></i><span>Boat necks, wide square necklines and off-the-shoulder styles.</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-[#d946ef] mt-1.5 shrink-0"></i><span>Boxy silhouettes, heavy knits and thick fabrics that add unnecessary volume.</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-[#d946ef] mt-1.5 shrink-0"></i><span>Puffy jackets to the waist</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-[#d946ef] mt-1.5 shrink-0"></i><span>Oversized collars, epaulettes, shoulder embellishments and large chest decorations.</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-[#d946ef] mt-1.5 shrink-0"></i><span>Skinny jeans…</span></li>
+            </ul>
+            <figure class="post-figure rounded-2xl overflow-hidden border border-purple-100 shadow-sm max-w-sm mx-auto mt-6">
+              <img src="img/skinny-jeans.webp" alt="Skinny jeans" loading="lazy">
+            </figure>
+          </div>
+
+          <!-- START WEARING -->
+          <div class="bg-[#faf6fe] border border-purple-100 rounded-3xl p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-black text-[#230d4e] tracking-tight mb-2">Start wearing</h2>
+            <div class="flex items-center gap-2 mb-5 max-w-[120px]">
+              <div class="flex-1 h-[1.5px] bg-[#e9d5ff]"></div>
+              <i class="fa-solid fa-heart text-[#851ee8] text-xs"></i>
+              <div class="flex-1 h-[1.5px] bg-[#e9d5ff]"></div>
+            </div>
+            <ul class="space-y-3 text-[#230d4e] font-bold">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-[#851ee8] mt-1.5 shrink-0"></i><span>Cowl necks</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-[#851ee8] mt-1.5 shrink-0"></i><span>V-neck and scoop-neck tops</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-[#851ee8] mt-1.5 shrink-0"></i><span>A-line skirts</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-[#851ee8] mt-1.5 shrink-0"></i><span>Wide-leg and bootcut pants</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-[#851ee8] mt-1.5 shrink-0"></i><span>Peplum tops</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-[#851ee8] mt-1.5 shrink-0"></i><span>Wrap tops, diagonal draping and asymmetrical necklines</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-[#851ee8] mt-1.5 shrink-0"></i><span>Belted blouses that gently define the waist</span></li>
+            </ul>
+          </div>
+
+          <p>
+            These observations are obviously for maybe certain environments or events, I will probably continue wearing my skinny jeans on the weekends, although with a peplum top, or a flared leather jacket 🤔
+          </p>
+
+          <p class="text-[#230d4e] font-bold">
+            And that is what I am excited about designing in the future, clothing designs that work for gals with a large back like me.
+          </p>
+
+          <p class="text-4xl text-[#851ee8]" style="font-family: 'Brush Script MT', cursive; font-style: italic;">
+            Sandra <i class="fa-solid fa-heart text-2xl align-middle"></i>
+          </p>
+        </article>
+
+        <!-- ============ RIGHT: LIST OF POSTS (filled automatically from posts.js) ============ -->
+        <aside class="lg:col-span-4">
+          <div class="lg:sticky lg:top-28 bg-[#faf6fe] border border-purple-100 rounded-3xl p-6 sm:p-7 shadow-sm">
+            <h2 class="text-xl sm:text-2xl font-black text-[#230d4e] tracking-tight mb-2">All Posts</h2>
+            <div class="flex items-center gap-2 mb-4 max-w-[120px]">
+              <div class="flex-1 h-[1.5px] bg-[#e9d5ff]"></div>
+              <i class="fa-solid fa-heart text-[#851ee8] text-xs"></i>
+              <div class="flex-1 h-[1.5px] bg-[#e9d5ff]"></div>
+            </div>
+            <ul id="post-list" class="space-y-1"></ul>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#851ee8] text-white py-4 px-4 text-center text-xs sm:text-sm font-bold tracking-wide">
+    <p>© 2026 Hem Works LLC</p>
+  </footer>
+
+  <script src="posts.js"></script>
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('mobileMenuIcon');
+      menu.classList.toggle('hidden');
+      icon.className = menu.classList.contains('hidden')
+        ? 'fa-solid fa-bars text-2xl'
+        : 'fa-solid fa-xmark text-2xl';
+    }
+  </script>
+</body>
+</html>
